@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2EAFFC1924F2BDA70010ADCA /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 2EAFFC1824F2BDA70010ADCA /* main.c */; };
+		2EAFFC3324F2C8C00010ADCA /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2EAFFC3224F2C8C00010ADCA /* main.cpp */; };
+		2EAFFC3624F2C9650010ADCA /* BitCalculate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2EAFFC3424F2C9650010ADCA /* BitCalculate.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +25,9 @@
 
 /* Begin PBXFileReference section */
 		2EAFFC1524F2BDA70010ADCA /* Leetcode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Leetcode; sourceTree = BUILT_PRODUCTS_DIR; };
-		2EAFFC1824F2BDA70010ADCA /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		2EAFFC3224F2C8C00010ADCA /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		2EAFFC3424F2C9650010ADCA /* BitCalculate.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BitCalculate.cpp; sourceTree = "<group>"; };
+		2EAFFC3524F2C9650010ADCA /* BitCalculate.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = BitCalculate.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +60,9 @@
 		2EAFFC1724F2BDA70010ADCA /* Leetcode */ = {
 			isa = PBXGroup;
 			children = (
-				2EAFFC1824F2BDA70010ADCA /* main.c */,
+				2EAFFC3224F2C8C00010ADCA /* main.cpp */,
+				2EAFFC3424F2C9650010ADCA /* BitCalculate.cpp */,
+				2EAFFC3524F2C9650010ADCA /* BitCalculate.hpp */,
 			);
 			path = Leetcode;
 			sourceTree = "<group>";
@@ -119,7 +124,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2EAFFC1924F2BDA70010ADCA /* main.c in Sources */,
+				2EAFFC3624F2C9650010ADCA /* BitCalculate.cpp in Sources */,
+				2EAFFC3324F2C8C00010ADCA /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

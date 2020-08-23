@@ -6,10 +6,13 @@
 //  Copyright © 2020 yaoyuan. All rights reserved.
 //
 
+#include <stdio.h>
 #include <iostream>
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
-    return 0;
+#include "BitCalculate.hpp"
+
+using namespace std;
+
+int main() {
+    cout << BitCalculate().rangeBitwiseAnd(5, 7) << endl;
 }
