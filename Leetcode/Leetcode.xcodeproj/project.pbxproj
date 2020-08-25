@@ -93,7 +93,7 @@
 		2EAFFC0D24F2BDA70010ADCA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1150;
+				LastUpgradeCheck = 1160;
 				ORGANIZATIONNAME = yaoyuan;
 				TargetAttributes = {
 					2EAFFC1424F2BDA70010ADCA = {
@@ -187,6 +187,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				"WARNING_CFLAGS[arch=*]" = "-Wno-shorten-64-to-32";
 			};
 			name = Debug;
 		};
@@ -244,6 +245,7 @@
 		2EAFFC1D24F2BDA70010ADCA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GS8ZTW7RZ6;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -254,6 +256,7 @@
 		2EAFFC1E24F2BDA70010ADCA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GS8ZTW7RZ6;
 				ENABLE_HARDENED_RUNTIME = YES;
