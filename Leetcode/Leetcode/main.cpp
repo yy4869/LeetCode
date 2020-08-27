@@ -86,15 +86,100 @@ public:
         }
         letterCombination(digits, loc + 1);
     }
+
+    // 4. 寻找两个正序数组的中位数
+    // 要求算法的时间复杂度为 O(log(m + n))。
+    double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
+        vector<int> merged;
+        auto iter1 = nums1.begin(), iter2 = nums2.begin();
+        for (; iter1 != nums1.end() && iter2 != nums2.end(); ) {
+            if (*iter1 <= *iter2) {
+                merged.push_back(*(iter1++));
+            } else {
+                merged.push_back(*(iter2++));
+            }
+        }
+        if (iter1 != nums1.end()) {
+            merged.insert(merged.end(), iter1, nums1.end());
+        }
+        if (iter2 != nums2.end()) {
+            merged.insert(merged.end(), iter2, nums2.end());
+        }
+        int mid = merged.size() / 2;
+        return merged.size() % 2 == 0 ? (double)(merged[mid] + merged[mid - 1]) / 2 : merged[mid];
+    }
+
+    // 找第k小的元素
+    double findTheKthMinNumber(vector<int> nums1, vector<int> nums2, int k) {
+        return 0;
+    }
+
+
+    map<string, string> startToEnd;
+    vector<string> findItinerary(vector<vector<string>>& tickets) {
+        return {};
+    }
+
+    void handleInput(vector<vector<string>> tickets) {
+
+    }
+
+    string convert(string s, int numRows) {
+        if (s.length() <= 1 || numRows <= 1) {
+            return s;
+        }
+        vector<string> rowline(numRows, "");
+        int runloop = numRows * 2 - 2;
+        for (int i = 0, mod = 0; i < s.length(); i++) {
+            mod = i % runloop;
+            if (mod < numRows) {
+                rowline[mod] += s[i];
+            } else {
+                rowline[runloop - mod] += s[i];
+            }
+        }
+        string res = join(rowline.begin(), rowline.end(), string(""));
+        return res;
+    }
+
+    template <class T, class A>
+    T join(const A &begin, const A &end, const T &t) {
+        T result;
+        for (A it = begin; it != end; it++) {
+            if (!result.empty())
+                result.append(t);
+            result.append(*it);
+          }
+          return result;
+    }
+
+    // 12. 整数转罗马数字
+    string intToRoman(int num) {
+        vector<pair<int, string>> rule = {
+            {1,"I"}, {4,"IV"}, {5,"V"}, {9,"IX"}, {10,"X"}, {40,"XL"}, {50,"L"},
+            {90,"XC"}, {100,"C"}, {400,"CD"}, {500,"D"}, {900,"CM"}, {1000,"M"}
+        };
+        string res = "";
+        int remain = num;
+        int minus;
+        for (int i = rule.size() - 1; i >= 0 && remain > 0; i--) {
+            minus = remain / rule[i].first;
+            for (int j = 0; j < minus ; j++) {
+                res += rule[i].second;
+            }
+            remain -= minus * rule[i].first;
+        }
+        return res;
+    }
 };
 
 int main() {
-//    cout << BitCalculate().rangeBitwiseAnd(5, 7) << endl;
-//    cout << Solution().isMatch("aab", "c*a*b") << endl;;
-//    cout << Solution().isMatch("aa", "a");
-    vector<string> res = Solution().letterCombinations("23");
-    for (auto &subStr: res) {
-        cout << subStr << endl;
-    }
+    string res = Solution().intToRoman(1994);
+    cout << res << "    " << (res == "MCMXCIV") << endl;
+    cout << (Solution().intToRoman(3999) == "MMMCMXCIX") << endl;
+    cout << (Solution().intToRoman(2001) == "MMI") << endl;
+
+
+    /*=========*/
     cout << endl;
 }
