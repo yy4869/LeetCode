@@ -10,5 +10,15 @@
 #define Utils_hpp
 
 #include <stdio.h>
+#include <regex>
+#include <string>
+#include <vector>
+#include <iostream>
+#include <map>
+
+using namespace std;
+
+template <class T, class A>
+T join(const A &begin, const A &end, const T &t);
 
 #endif /* Utils_hpp */

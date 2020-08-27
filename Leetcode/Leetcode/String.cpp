@@ -6,31 +6,92 @@
 //  Copyright © 2020 yaoyuan. All rights reserved.
 //
 
-#include "String.hpp"
-#include <regex>
+#include "Utils.hpp"
 
 // 459. 重复的子字符串
-bool String::repeatedSubstringPattern(string s) {
-    return (s + s).find(s, 1) != s.size();
-}
+class Solution_459_repeatedSubstringPattern {
+public:
+    bool repeatedSubstringPattern(string s) {
+        return (s + s).find(s, 1) != s.size();
+    }
+    bool isMatch(string s, string p);
+};
 
 // 10. 正则表达式匹配
-bool String::isMatch(string s, string p) {
-//    int sl = (int)s.length(), pl = (int)p.length();
-//    for (int i = sl - 1, j = pl - 1; i >= 0; ) {
-//        if (s[i] == p[j]) {
-//            i--;
-//            j--;
-//        } else if (p[j] == '*') {
-//
-//        }
-//    }
+class Solution_10_isMatch {
+public:
+    bool isMatch(string s, string p) {
+        s = " " + s;
+        p = " " + p;
+        int m = s.size(), n = p.size();
+        bool dp[m + 1][n + 1];
+        memset(dp, false, sizeof(dp));
+        dp[0][0] = true;
+
+        for(int i = 1; i <= m; i++) {
+            for (int j = 1; j <= n; j++) {
+                if (s[i - 1] == p[j - 1] || p[j - 1] == '.') {
+                    dp[i][j] = dp[i - 1][j - 1];
+                } else if (p[j - 1] == '*') {
+                    if (s[i - 1] == p[j - 2] || p[j - 2] == '.') {
+                        dp[i][j] = dp[i - 1][j] || dp[i][j - 1] || dp[i][j - 2];
+                    } else {
+                        dp[i][j] = dp[i][j - 2];
+                    }
+                }
+            }
+        }
+        return dp[m][n];
+    }
+    
     // 搞笑解法
-//    string pattern = p;
-//    regex re(pattern);
-//    return regex_match(s, re);
-    return true;
-}
-//s = "aa"
-//p = "a*"
-//输出: true
+    bool isMatch2(string s, string p) {
+        string pattern = p;
+        regex re(pattern);
+        return regex_match(s, re);
+    }
+};
+
+// 6. Z 字形变换
+class Solution_6_convert {
+public:
+    string convert(string s, int numRows) {
+        if (s.length() <= 1 || numRows <= 1) {
+            return s;
+        }
+        vector<string> rowline(numRows, "");
+        int runloop = numRows * 2 - 2;
+        for (int i = 0, mod = 0; i < s.length(); i++) {
+            mod = i % runloop;
+            if (mod < numRows) {
+                rowline[mod] += s[i];
+            } else {
+                rowline[runloop - mod] += s[i];
+            }
+        }
+        string res = join(rowline.begin(), rowline.end(), string(""));
+        return res;
+    }
+};
+
+// 12. 整数转罗马数字
+class Solution_12_intToRoman {
+public:
+    string intToRoman(int num) {
+        vector<pair<int, string>> rule = {
+            {1,"I"}, {4,"IV"}, {5,"V"}, {9,"IX"}, {10,"X"}, {40,"XL"}, {50,"L"},
+            {90,"XC"}, {100,"C"}, {400,"CD"}, {500,"D"}, {900,"CM"}, {1000,"M"}
+        };
+        string res = "";
+        int remain = num;
+        int minus;
+        for (int i = rule.size() - 1; i >= 0 && remain > 0; i--) {
+            minus = remain / rule[i].first;
+            for (int j = 0; j < minus ; j++) {
+                res += rule[i].second;
+            }
+            remain -= minus * rule[i].first;
+        }
+        return res;
+    }
+};

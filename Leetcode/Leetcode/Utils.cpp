@@ -7,10 +7,6 @@
 //
 
 #include "Utils.hpp"
-#include <regex>
-#include <string>
-#include <vector>
-#include <iostream>
  
 int test_regex_match()
 {
@@ -113,4 +109,15 @@ int test_regex_replace2()
     std::cout << std::endl;
  
     return 0;
+}
+
+template <class T, class A>
+T join(const A &begin, const A &end, const T &t) {
+    T result;
+    for (A it = begin; it != end; it++) {
+        if (!result.empty())
+            result.append(t);
+        result.append(*it);
+    }
+    return result;
 }
