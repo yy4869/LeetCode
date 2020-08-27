@@ -9,7 +9,7 @@
 #include "Utils.hpp"
 
 // 17. 电话号码的字母组合
-class Solution_17_letterCombinations {
+class Solution_17 {
 public:
     map<char, string> digitToStr = {
         {'2', "abc"},

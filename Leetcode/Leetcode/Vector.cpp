@@ -10,7 +10,7 @@
 
 // 4. 寻找两个正序数组的中位数
 // 要求算法的时间复杂度为 O(log(m + n))。
-class Solution_4_findMedianSortedArrays {
+class Solution_4 {
 public:
     double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
         vector<int> merged;

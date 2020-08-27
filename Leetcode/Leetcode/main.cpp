@@ -10,8 +10,11 @@
 #include "String.cpp"
 
 int main() {
-    cout << (Solution_12_intToRoman().intToRoman(3999) == "MMMCMXCIX") << endl;
-
+    cout << (Solution_657().judgeCircle("LL") == false) << endl;
+    cout << (Solution_657().judgeCircle("UD") == true) << endl;
+    
+    
+    
     /*=========*/
     cout << endl;
 }

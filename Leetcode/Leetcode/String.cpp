@@ -9,7 +9,7 @@
 #include "Utils.hpp"
 
 // 459. 重复的子字符串
-class Solution_459_repeatedSubstringPattern {
+class Solution_459 {
 public:
     bool repeatedSubstringPattern(string s) {
         return (s + s).find(s, 1) != s.size();
@@ -18,7 +18,7 @@ public:
 };
 
 // 10. 正则表达式匹配
-class Solution_10_isMatch {
+class Solution_10 {
 public:
     bool isMatch(string s, string p) {
         s = " " + s;
@@ -53,7 +53,7 @@ public:
 };
 
 // 6. Z 字形变换
-class Solution_6_convert {
+class Solution_6 {
 public:
     string convert(string s, int numRows) {
         if (s.length() <= 1 || numRows <= 1) {
@@ -75,7 +75,7 @@ public:
 };
 
 // 12. 整数转罗马数字
-class Solution_12_intToRoman {
+class Solution_12 {
 public:
     string intToRoman(int num) {
         vector<pair<int, string>> rule = {
@@ -94,4 +94,32 @@ public:
         }
         return res;
     }
+};
+
+//657. 机器人能否返回原点
+class Solution_657 {
+public:
+    bool judgeCircle(string moves) {
+        int vertical = 0, horizon = 0;
+        for (auto ch: moves) {
+            switch (ch) {
+                case 'R':
+                    horizon += 1;
+                    break;
+                case 'L':
+                    horizon += -1;
+                    break;
+                case 'U':
+                    vertical += 1;
+                    break;
+                case 'D':
+                    vertical += -1;
+                    break;
+                default:
+                    break;
+            }
+        }
+        return vertical == 0 && horizon == 0;
+    }
+//    R（右），L（左），U（上）和 D（下）
 };

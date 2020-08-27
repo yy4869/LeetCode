@@ -7,7 +7,7 @@
 //
 
 // 201. 数字范围按位与
-class Solution_201_rangeBitwiseAnd {
+class Solution_201 {
 public:
     int rangeBitwiseAnd(int m, int n) {
         int count = 0;
