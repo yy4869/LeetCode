@@ -17,5 +17,3 @@ int BitCalculate::rangeBitwiseAnd(int m, int n) {
     }
     return m <<= count;
 }
-
-

@@ -13,8 +13,10 @@
 #include <map>
 
 #include "BitCalculate.hpp"
+#include "String.hpp"
 
 using namespace std;
+#define STOP "#"
 
 class Solution {
 public:
@@ -182,4 +184,10 @@ int main() {
 
     /*=========*/
     cout << endl;
+//    cout << BitCalculate().rangeBitwiseAnd(5, 7) << endl;
+    cout << String().isMatch("aa", "a") << endl; //false
+    cout << String().isMatch("aa", "a*") << endl;
+    cout << String().isMatch("ab", ".*") << endl;
+    cout << String().isMatch("aab", "c*a*b") << endl;
+    cout << String().isMatch("mississippi", "mis*is*p*.") << endl; //false
 }

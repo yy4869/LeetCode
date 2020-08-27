@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E36DFD824F3BF810074B631 /* String.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2E36DFD624F3BF810074B631 /* String.cpp */; };
+		2E36DFDB24F3D65F0074B631 /* Utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2E36DFD924F3D65F0074B631 /* Utils.cpp */; };
 		2EAFFC3324F2C8C00010ADCA /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2EAFFC3224F2C8C00010ADCA /* main.cpp */; };
 		2EAFFC3624F2C9650010ADCA /* BitCalculate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2EAFFC3424F2C9650010ADCA /* BitCalculate.cpp */; };
 /* End PBXBuildFile section */
@@ -24,6 +26,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2E36DFD624F3BF810074B631 /* String.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = String.cpp; sourceTree = "<group>"; };
+		2E36DFD724F3BF810074B631 /* String.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = String.hpp; sourceTree = "<group>"; };
+		2E36DFD924F3D65F0074B631 /* Utils.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Utils.cpp; sourceTree = "<group>"; };
+		2E36DFDA24F3D65F0074B631 /* Utils.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Utils.hpp; sourceTree = "<group>"; };
 		2EAFFC1524F2BDA70010ADCA /* Leetcode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Leetcode; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EAFFC3224F2C8C00010ADCA /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		2EAFFC3424F2C9650010ADCA /* BitCalculate.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BitCalculate.cpp; sourceTree = "<group>"; };
@@ -63,6 +69,10 @@
 				2EAFFC3224F2C8C00010ADCA /* main.cpp */,
 				2EAFFC3424F2C9650010ADCA /* BitCalculate.cpp */,
 				2EAFFC3524F2C9650010ADCA /* BitCalculate.hpp */,
+				2E36DFD624F3BF810074B631 /* String.cpp */,
+				2E36DFD724F3BF810074B631 /* String.hpp */,
+				2E36DFD924F3D65F0074B631 /* Utils.cpp */,
+				2E36DFDA24F3D65F0074B631 /* Utils.hpp */,
 			);
 			path = Leetcode;
 			sourceTree = "<group>";
@@ -125,7 +135,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2EAFFC3624F2C9650010ADCA /* BitCalculate.cpp in Sources */,
+				2E36DFD824F3BF810074B631 /* String.cpp in Sources */,
 				2EAFFC3324F2C8C00010ADCA /* main.cpp in Sources */,
+				2E36DFDB24F3D65F0074B631 /* Utils.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
