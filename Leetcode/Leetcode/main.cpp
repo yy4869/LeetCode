@@ -8,12 +8,12 @@
 
 #include "Utils.hpp"
 #include "String.cpp"
+#include "StackCalculate.cpp"
+#include "DP.cpp"
 
 int main() {
-    cout << (Solution_657().judgeCircle("LL") == false) << endl;
-    cout << (Solution_657().judgeCircle("UD") == true) << endl;
-    
-    
+    cout << (Solution_754().reachNumber(2) == 3) << endl;
+    cout << (Solution_754().reachNumber(3) == 2) << endl;
     
     /*=========*/
     cout << endl;
