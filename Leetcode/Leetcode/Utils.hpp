@@ -14,6 +14,7 @@
 #include <string>
 #include <vector>
 #include <iostream>
+#include <sstream>
 #include <map>
 #include <stack>
 
@@ -21,5 +22,7 @@ using namespace std;
 
 template <class T, class A>
 T join(const A &begin, const A &end, const T &t);
+vector<string>  split(const string& str,const string& delim);
+string reverse_one_word(string str);
 
 #endif /* Utils_hpp */

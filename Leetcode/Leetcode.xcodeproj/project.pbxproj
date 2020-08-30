@@ -15,7 +15,7 @@
 		2EAFFC3624F2C9650010ADCA /* BitCalculate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2EAFFC3424F2C9650010ADCA /* BitCalculate.cpp */; };
 		2EB2C5D024F8E23E009E5D41 /* StackCalculate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2EB2C5CF24F8E23E009E5D41 /* StackCalculate.cpp */; };
 		2EB2C5D224F8F1BE009E5D41 /* DP.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2EB2C5D124F8F1BE009E5D41 /* DP.cpp */; };
-		2EB2C5D424F8F7E4009E5D41 /* List.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2EB2C5D324F8F7E4009E5D41 /* List.cpp */; };
+		2EB2C5D424F8F7E4009E5D41 /* ListCalculate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2EB2C5D324F8F7E4009E5D41 /* ListCalculate.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -41,7 +41,7 @@
 		2EAFFC3424F2C9650010ADCA /* BitCalculate.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BitCalculate.cpp; sourceTree = "<group>"; };
 		2EB2C5CF24F8E23E009E5D41 /* StackCalculate.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = StackCalculate.cpp; sourceTree = "<group>"; };
 		2EB2C5D124F8F1BE009E5D41 /* DP.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DP.cpp; sourceTree = "<group>"; };
-		2EB2C5D324F8F7E4009E5D41 /* List.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = List.cpp; sourceTree = "<group>"; };
+		2EB2C5D324F8F7E4009E5D41 /* ListCalculate.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ListCalculate.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +83,7 @@
 				2E303C0B24F80EC700199823 /* Vector.cpp */,
 				2EB2C5CF24F8E23E009E5D41 /* StackCalculate.cpp */,
 				2EB2C5D124F8F1BE009E5D41 /* DP.cpp */,
-				2EB2C5D324F8F7E4009E5D41 /* List.cpp */,
+				2EB2C5D324F8F7E4009E5D41 /* ListCalculate.cpp */,
 			);
 			path = Leetcode;
 			sourceTree = "<group>";
@@ -145,7 +145,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2EB2C5D424F8F7E4009E5D41 /* List.cpp in Sources */,
+				2EB2C5D424F8F7E4009E5D41 /* ListCalculate.cpp in Sources */,
 				2EAFFC3624F2C9650010ADCA /* BitCalculate.cpp in Sources */,
 				2E36DFD824F3BF810074B631 /* String.cpp in Sources */,
 				2E303C0C24F80EC700199823 /* Vector.cpp in Sources */,

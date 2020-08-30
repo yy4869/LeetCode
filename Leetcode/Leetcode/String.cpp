@@ -123,3 +123,60 @@ public:
     }
 //    R（右），L（左），U（上）和 D（下）
 };
+
+// 557. 反转字符串中的单词 III
+class Solution_557 {
+public:
+    // 用了私有定制的方法
+    string reverseWords(string s) {
+        vector<string> splits = split(s, " ");
+        string res = "";
+        for (auto s: splits) {
+            res += reverse_one_word(s) + " ";
+        }
+        return res.substr(0, res.length() - 1);
+    }
+    
+    // 纯库函数实现
+    string reverseWords2(string s) {
+        if (s.length() <= 0) {
+            return s;
+        }
+        string res = "", temp = "";
+        stringstream ss(s);
+        while (ss >> temp) {
+            reverse(temp.begin(), temp.end());
+            res += temp + " ";
+        }
+        res.pop_back();
+        return res;
+    }
+};
+
+// 712. 两个字符串的最小ASCII删除和
+class Solution_712 {
+public:
+    int minimumDeleteSum(string s1, string s2) {
+        int len1 = s1.length(), len2 = s2.length();
+        int dp[len1 + 1][len2 + 1];
+        memset(dp, 0, sizeof(dp));
+        
+        for (int i = 1; i <= len1; i++) {
+            dp[i][0] = dp[i - 1][0] + s1[i - 1];
+        }
+        for (int j = 1; j <= len2; j++) {
+            dp[0][j] = dp[0][j - 1] + s2[j - 1];
+        }
+        for (int i = 1; i <= len1; i++) {
+            for (int j = 1; j <= len2; j++) {
+                if (s1[i - 1] == s2[j - 1]) {
+                    dp[i][j] = dp[i - 1][j -1];
+                } else {
+                    dp[i][j] = min(dp[i - 1][j] + s1[i - 1], dp[i][j - 1] + s2[j - 1]);
+                }
+            }
+        }
+        cout << dp[len1][len2] << endl;
+        return dp[len1][len2];
+    }
+};

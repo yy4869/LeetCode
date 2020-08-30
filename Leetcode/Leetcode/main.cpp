@@ -10,11 +10,12 @@
 #include "String.cpp"
 #include "StackCalculate.cpp"
 #include "DP.cpp"
+#include "ListCalculate.cpp"
 
 int main() {
-    cout << (Solution_754().reachNumber(2) == 3) << endl;
-    cout << (Solution_754().reachNumber(3) == 2) << endl;
-    
+//    Solution_19().validate({1,2,3,4,5}, 2);
+//    cout << Solution_557().reverseWords("hello world") << endl;
+    cout << (Solution_712().minimumDeleteSum("delete", "leet") == 403) << endl;
     /*=========*/
     cout << endl;
 }
