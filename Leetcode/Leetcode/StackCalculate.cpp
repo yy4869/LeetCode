@@ -28,3 +28,32 @@ public:
 //    输入：pushed = [2,1,0], popped = [1,2,0]
 //    输出：true
 };
+
+// 841. 钥匙和房间
+class Solution_841 {
+public:
+    bool canVisitAllRooms(vector<vector<int>>& rooms) {
+        int number = rooms.size();
+        bool visited[number];
+        memset(visited, false, sizeof(visited));
+        visited[0] = true;
+        stack<int> roomstack;
+        roomstack.push(0);
+        while (!roomstack.empty()) {
+            int top = roomstack.top();
+            roomstack.pop();
+            visited[top] = true;
+            for (auto key: rooms[top]) {
+                if (!visited[key]) {
+                    roomstack.push(key);
+                }
+            }
+        }
+        for (auto visit: visited) {
+            if (!visit) {
+                return false;
+            }
+        }
+        return true;
+    }
+};

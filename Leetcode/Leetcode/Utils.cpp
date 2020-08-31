@@ -123,7 +123,7 @@ T join(const A &begin, const A &end, const T &t) {
 }
 
 //将分割后的子字符串存储在vector中
-vector<string>  split(const string& str,const string& delim) {
+vector<string> split(const string& str,const string& delim) {
     vector<string> res;
     if("" == str) return  res;
     
@@ -135,7 +135,9 @@ vector<string>  split(const string& str,const string& delim) {
         pos = strs.find(delim, i); //pos为分隔符第一次出现的位置，从i到pos之前的字符串是分隔出来的字符串
         if( pos < size) { //如果查找到，如果没有查找到分隔符，pos为string::npos
             string s = strs.substr(i, pos - i);//*****从i开始长度为pos-i的子字符串
-            res.push_back(s);//两个连续空格之间切割出的字符串为空字符串，这里没有判断s是否为空，所以最后的结果中有空字符的输出，
+            if (s != "") {
+                res.push_back(s); //两个连续delim之间切割出的字符串为空字符串，这里判断s是否为要删除的字符串,最后的结果中没有空字符的输出，
+            }
             i = pos + delim.size() - 1;
         }
         
@@ -152,4 +154,78 @@ string reverse_one_word(string str) {
         str[str.length() - i - 1] = tmp;
     }
     return str;
+}
+
+// 去除字符串前后空格
+string trim(string &s) {
+    if (s.empty()) return s;
+    s.erase(0, s.find_first_not_of(" "));
+    s.erase(s.find_last_not_of(" ") + 1);
+    return s;
+}
+
+// 字符串变成大写
+string toUpper(string &str) {
+    transform(str.begin(), str.end(), str.begin(), ::toupper);
+    return str;
+}
+
+// 字符串变成小写
+string toLower(string &str) {
+    transform(str.begin(), str.end(), str.begin(), ::tolower);
+    return str;
+}
+
+// 删除字符串中空格
+string eraseSpace(string &str) {
+    str.erase(remove(str.begin(), str.end(), ' '), str.end());
+    return str;
+}
+
+// 按条件删除字符串中所有满足条件的字符
+// 只是给个例子
+string eraseByCodition(string &str) {
+    str.erase(remove_if(str.begin(),
+                        str.end(),
+                        [](char x) {
+                            return isspace(x) || x == 's';
+                        }),
+              str.end());
+    return str;
+}
+
+// 用给定字符串 desc 替换原串 str 中的子串 from
+string replaceByStr(string &str, string from, string desc) {
+    str.replace(str.find(from), from.size(), desc);
+    return str;
+}
+
+// 判断字符串是否以head开头
+bool startWith(string str, string head) {
+    return str.compare(0, head.size(), head) == 0;
+}
+
+// 判断字符串是否以tail开头
+bool endWith(string str, string tail) {
+    return str.compare(str.size() - tail.size(), tail.size(), tail) == 0;
+}
+
+// 字符串连接
+string concat(vector<string> arrays) {
+    return accumulate(arrays.begin() , arrays.end() , string(""));
+}
+
+// vector按任意字符连接见上方join方法
+
+// std自带的已经实现的比较好的接口：
+void test() {
+    string str = "i,like,,cat";
+
+    // 字符串中替换所有的某个字符
+    replace(str.begin(),str.end(),',',' ');
+    // cout:i like  cat
+
+    // 原地翻转字符串
+    reverse(str.begin(), str.end());
+    // cout:tac  ekil i
 }

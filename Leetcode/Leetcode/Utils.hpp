@@ -17,12 +17,25 @@
 #include <sstream>
 #include <map>
 #include <stack>
+#include <queue>
+#include <algorithm>
+#include <numeric>
 
 using namespace std;
 
 template <class T, class A>
 T join(const A &begin, const A &end, const T &t);
+
 vector<string>  split(const string& str,const string& delim);
 string reverse_one_word(string str);
+string trim(string &s);
+string toUpper(string &str);
+string toLower(string &str);
+string eraseSpace(string &str);
+string eraseByCodition(string &str);
+string replaceByStr(string &str, string from, string desc);
+bool startWith(string str, string head);
+bool endWith(string str, string tail);
+string concat(vector<string> arrays);
 
 #endif /* Utils_hpp */

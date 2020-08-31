@@ -15,7 +15,12 @@
 int main() {
 //    Solution_19().validate({1,2,3,4,5}, 2);
 //    cout << Solution_557().reverseWords("hello world") << endl;
-    cout << (Solution_712().minimumDeleteSum("delete", "leet") == 403) << endl;
+//    cout << (Solution_712().minimumDeleteSum("delete", "leet") == 403) << endl;
+    
+
+
+
     /*=========*/
     cout << endl;
 }
+
