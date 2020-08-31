@@ -17,64 +17,36 @@ struct TreeNode {
     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
 };
 
+// 参考leetcode输入和建树的方式
+// [1,2,null]
+//   1
+//  / \
+// 2  null
 class MyTree {
 public:
+    string data;
     TreeNode* root;
-    // [1,2,null]
-    //   1
-    //  / \
-    // 2  null
-    TreeNode* handleInput(string data) {
-        
-        return root;
+    vector<string> nodes;
+    MyTree(string data): data(data) {
+        handleLeetcodeTreeInputString(data);
+        root = deserialize();
     }
-};
 
-// 897. 递增顺序查找树
-class Solution_897 {
-public:
-    TreeNode* increasingBST(TreeNode* root) {
-        return root;
-    }
-};
-
-/**
- * Definition for a binary tree node.
- * struct TreeNode {
- *     int val;
- *     TreeNode *left;
- *     TreeNode *right;
- *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
- * };
- */
-class Codec {
-public:
-
-    // Encodes a tree to a single string.
-    string serialize(TreeNode* root) {
-        ostringstream out;
-        queue<TreeNode*> q;
-        q.push(root);
-        while (!q.empty()) {
-            TreeNode* tmp = q.front();
-            q.pop();
-            if (tmp) {
-                out<<tmp->val<<" ";
-                q.push(tmp->left);
-                q.push(tmp->right);
-            } else {
-                out<<"null ";
-            }
-        }
-        return out.str();
+    void handleLeetcodeTreeInputString(string data) {
+        // string data = "[1,2, 3,null ] ";
+        trim(data);
+        data.erase(data.begin());
+        data.erase(data.end() - 1);
+        eraseSpace(data);
+        nodes = split(data, ",");
+        // {1,2,3,null}
+        // cout << concat(split(data, ","));
     }
 
     // Decodes your encoded data to tree.
-    TreeNode* deserialize(string data) {
-        istringstream input(data);
-        string val;
+    TreeNode* deserialize() {
         vector<TreeNode*> vec;
-        while (input >> val) {
+        for (auto val: nodes) {
             if (val == "null") {
                 vec.push_back(NULL);
             } else {
@@ -90,8 +62,74 @@ public:
         return vec[0];
     }
 
+    // Encodes a tree to a single string.
+    string serialize() {
+        string res = "";
+        queue<TreeNode*> q;
+        q.push(root);
+        while (!q.empty()) {
+            TreeNode* tmp = q.front();
+            q.pop();
+            if (tmp) {
+                if (res.length() != 0) {
+                    res += ",";
+                }
+                res += to_string(tmp -> val);
+                q.push(tmp->left);
+                q.push(tmp->right);
+            } else {
+                if (res.length() != 0) {
+                    res += ",";
+                }
+                res += "null";
+            }
+        }
+        return "[" + res + "]";
+    }
 };
 
-// Your Codec object will be instantiated and called as such:
-// Codec codec;
-// codec.deserialize(codec.serialize(root));
+// 897. 递增顺序查找树
+class Solution_897 {
+public:
+    void run() {
+        TreeNode* root;
+        increasingBST(root);
+    }
+    TreeNode* increasingBST(TreeNode* root) {
+//        string data = "[5,3,6,2,4,null,8,1,null,null,null,7,9]";
+//        MyTree *mytree = new MyTree(data);
+//        cout << mytree -> serialize() << endl;
+        TreeNode *cur = root;
+        return root;
+    }
+};
+//输入：[5,3,6,2,4,null,8,1,null,null,null,7,9]
+//
+//       5
+//      / \
+//    3    6
+//   / \    \
+//  2   4    8
+// /        / \
+//1        7   9
+//
+//输出：[1,null,2,null,3,null,4,null,5,null,6,null,7,null,8,null,9]
+//
+// 1
+//  \
+//   2
+//    \
+//     3
+//      \
+//       4
+//        \
+//         5
+//          \
+//           6
+//            \
+//             7
+//              \
+//               8
+//                \
+//                 9
+//
